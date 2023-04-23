@@ -27,7 +27,7 @@ void func(char *str) //simple print
 }
 
 
-//function to remove leading 00
+//function to remove leading 0-es
 void removeLeadingZeros(char *str)
 {
     if (!str)
@@ -50,7 +50,7 @@ void removeLeadingZeros(char *str)
     str[j] = '\0';
 }
 
-int is_number(char *str)  //checks for valid numbers
+int is_number(char *str)  //check for valid numbers
 {
     if (!str)
         return 0;
@@ -82,8 +82,7 @@ int is_number(char *str)  //checks for valid numbers
     return has_digit && !has_other && (has_minus <= 1);
 }
 
-
-//int limit, convert to int, add to stack
+//convert to int, check range... but 0?
 int int_range(char *str)
 {
     long num = 0;
@@ -108,12 +107,12 @@ int int_range(char *str)
     if (num < INT_MIN || num > INT_MAX)
         return 0;
         
-    return 1;
+    return 1;  //return num and add *error by refernce, to count 0 case
 }
 
 //check duplicates in stack;
 
-
+//to do
 
 
 char	*ft_strdup(const char *str)
@@ -284,8 +283,7 @@ int pars(char *res)
     }
     for (int i = 0; result[i] != NULL; i++)
     {
-        func(result[i]);  //function to check  dublicates, sorted?
-        //is_number or not.
+        func(result[i]); //print
     }
     free(result);
     return 1;
@@ -313,8 +311,7 @@ int main(int argc, char **argv)
            }
            else
            {
-               //call atoi
-               //add to stack(linked list)
+               
            }
         }
     }
